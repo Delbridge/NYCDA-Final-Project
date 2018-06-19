@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ComicsForum</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <% if !user_signed_in? %>
+  <a href="/users/sign_in"> Sign In </a>
+  <a href="/users/sign_up">Sign Up</a>
+<% end %>
+
+<% if user_signed_in? %>
+  <a href= " /users/#{current_user.id}/edit"> Edit Info </a>
+  <a href= "/users/sign_out"> Log Out</a>
+  <% end %>
+ 
+
+
+    <%= yield %>
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  </body>
+</html>
