@@ -1,18 +1,18 @@
 class FavoritesController < ApplicationController
   def index
     @favorites = Favorite.all
+
   end
 
   def display
     if !current_user
-      redirect_to "/"
+      redirect_to "/favorites/index"
     else
       @favorite=Favorite.new
     end
 
     @search_results = []
-
-    Favorite.each do 
+    Favorite.all.each do 
       @search_results << Favorite.new
     end
 
@@ -20,10 +20,20 @@ class FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.new(favorite_params)
-    @favorite.user_id=current_user.id
-
-
-
+    @favorite.user_id = current_user.id
+        if params.has_key?("favorite")
+          Favorite.create(favorite_params(params["favorite"]))
+        else
+          params["favorites"].each do |favorite|
+          Favorite.create(favorite_params(favorite))
+        end
+    
+        if @favorite.save
+          flash[:success] = "Here are your results!"
+          redirect_to "favorites/display"
+        else
+          render "/"
+        end
   end
 
   def show
@@ -34,13 +44,20 @@ class FavoritesController < ApplicationController
   
   
 
-
-
- 
-
   private 
   def favorite_params
     params.require(:favorite).permit(:title, :description, :name, :image)
 
   end
 end
+
+end
+
+
+
+
+
+
+
+
+
