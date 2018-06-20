@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
   def index
+    @favorites= Favoite.all
 
   end
 
@@ -13,14 +14,11 @@ class FavoritesController < ApplicationController
 
 
   def show
+    @favorite = Favorite.find(params[:id])
+
 
   end
   
-  def update
-  end
-
-  def edit
-  end
 
   private 
   def favorite_params
