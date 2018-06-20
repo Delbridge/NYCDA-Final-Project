@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'favorites/display'
   get 'favorites/show'
   get 'favorites/edit'
+
  devise_for :users, :controllers => { registrations: 'registrations' }
 
   devise_scope :user do
@@ -11,9 +12,11 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :favorites
   root "users#index"
 
   post "/search" => "application#search"
+
 
    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
