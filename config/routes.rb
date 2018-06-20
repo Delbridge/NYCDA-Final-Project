@@ -1,17 +1,11 @@
 Rails.application.routes.draw do
  
-  get 'favorites/index'
-  get 'favorites/display'
-  get 'favorites/show'
-  get 'favorites/edit'
- devise_for :users, :controllers => { registrations: 'registrations' }
-
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-  end
+  devise_for :users
 
   resources :users
-  root "users#index"
+  root "favorites#index"
+
+  resources :favorites
 
   post "/search" => "application#search"
 
