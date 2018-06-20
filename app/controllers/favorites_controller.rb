@@ -11,16 +11,16 @@ class FavoritesController < ApplicationController
 
   end
 
-
   def show
-
   end
   
+  def edit
+  end
+
   def update
   end
 
-  def edit
-  end
+ 
 
   private 
   def favorite_params
