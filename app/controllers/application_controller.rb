@@ -1,17 +1,17 @@
 class ApplicationController < ActionController::Base
 
-	require 'marvel_api'
-
 	def search
-		@client = Marvel::Client.new
-		@client.configure do |config|
-		  config.api_key = ENV['MARVEL_PUBLIC_KEY']
-		  config.private_key = ENV['MARVEL_PRIVATE_KEY']
-		end
+		teller = params[:input].to_s
 		def search_character(input)
 			returned_characters = []
-			f_letter = input[0]
-			all_ch = JSON.parse(@client.characters(nameStartsWith: f_letter, limit:90).to_json)
+			f_letter = input[0].to_s
+			require 'marvel_api'
+			@client = Marvel::Client.new
+			@client.configure do |config|
+			  config.api_key = Rails.application.credentials.marvel_public_key
+			  config.private_key = Rails.application.credentials.marvel_private_key
+			end
+			all_ch = @client.characters(nameStartsWith: f_letter.to_s, limit: 90)
 			all_ch.each do |character|
 				if character["name"].downcase.include?(input.downcase)
 					ch_object = {}
@@ -31,8 +31,9 @@ class ApplicationController < ActionController::Base
 			end
 			return returned_characters
 		end
-		sender = search_character(params[:input])
-		redirect_to favorites_display_url(search_results: sender)
+		sender = search_character(teller)
+		# sender="hi"
+		redirect_to favorites_new_url(search_results: sender)
 
 		# sends an ARRAY of character OBJECTS to the FAVORITES#DISPLAY view
 			# each object has a name string, description string, image string, and a title array
