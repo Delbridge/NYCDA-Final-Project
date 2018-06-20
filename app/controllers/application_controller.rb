@@ -31,8 +31,13 @@ class ApplicationController < ActionController::Base
 			end
 			return returned_characters
 		end
-		session[:search_results] = search_character([:params])
-		redirect_to 'favorites#new'
+		sender = search_character(params[:input])
+		redirect_to favorites_display_url(search_results: sender)
+
+		# sends an ARRAY of character OBJECTS to the FAVORITES#DISPLAY view
+			# each object has a name string, description string, image string, and a title array
+		# in the controller for FAVORITES#DISPLAY the array can be called as PARAMS[:SEARCH_RESULTS]
+
 	end
 
 end

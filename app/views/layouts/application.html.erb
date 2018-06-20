@@ -12,8 +12,12 @@
   <body>
 
   <% if !user_signed_in? %>
-  <a href="/users/sign_in"> Sign In </a>
-  <a href="/users/sign_up">Sign Up</a>
+    <a href="/users/sign_in"> Sign In </a>
+    <a href="/users/sign_up">Sign Up</a>
+    <%= form_tag(search_path) do %>
+        <%= text_field_tag :input %>
+        <%= submit_tag "search" %>
+    <% end %>
 <% end %>
 
 <% if user_signed_in? %>
