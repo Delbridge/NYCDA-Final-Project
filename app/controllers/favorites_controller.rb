@@ -12,13 +12,20 @@ class FavoritesController < ApplicationController
 
   end
 
-
   def show
-    @favorite = Favorite.find(params[:id])
-
 
   end
   
+  def edit
+  end
+
+  def update
+    @favorite = Favorite.find(params[:id])
+
+  end
+  
+
+ 
 
   private 
   def favorite_params
