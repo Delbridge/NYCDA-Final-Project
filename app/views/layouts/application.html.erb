@@ -11,21 +11,27 @@
 
   <body>
 
-  <% if !user_signed_in? %>
-    <a href="/users/sign_in"> Sign In </a>
-    <a href="/users/sign_up">Sign Up</a>
+<nav>
+    <% if !user_signed_in? %>
+    <%=link_to "home", root_path %> •
+    <%= link_to "sign in", new_user_session_path %> •
+    <%=link_to "sign up", new_user_registration_path %>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%=link_to "Home", root_path %> •
+    <a href= " /users/edit"> Edit User Info. </a> •
+    <a href= "/favorites/index">Favorites Show Page </a> •
+    <%= link_to "Sign Out",destroy_user_session_path, method: :delete %>
+    
     <%= form_tag(search_path) do %>
         <%= text_field_tag :input %>
         <%= submit_tag "search" %>
     <% end %>
-<% end %>
-
-<% if user_signed_in? %>
-  <a href= " /users/#{current_user.id}/edit"> Edit Info </a>
-  <a href= "/users/sign_out"> Log Out</a>
+  
   <% end %>
- 
 
+ </nav>
 
     <%= yield %>
     <p class="notice"><%= notice %></p>
