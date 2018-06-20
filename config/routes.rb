@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
  
-  get 'favorites/index'
-  get 'favorites/new'
-  get 'favorites/show'
-  get 'favorites/edit'
  devise_for :users, :controllers => { registrations: 'registrations' }
 
   devise_scope :user do
@@ -11,7 +7,9 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :favorites
   root "users#index"
+
 
 
 
