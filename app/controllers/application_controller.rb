@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
 		end
 		sender = search_character(teller)
 		# sender="hi"
-		redirect_to favorites_new_url(search_results: sender)
+		redirect_to favorites_display_url(search_results: sender)
 
 		# sends an ARRAY of character OBJECTS to the FAVORITES#DISPLAY view
 			# each object has a name string, description string, image string, and a title array
