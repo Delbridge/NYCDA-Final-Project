@@ -1,6 +1,5 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites= Favoite.all
 
   end
 
@@ -9,24 +8,14 @@ class FavoritesController < ApplicationController
   end
 
   def create
-
   end
 
   def show
-<<<<<<< HEAD
   end
   
-  def edit
-  end
-
-  def update
-=======
-    @favorite = Favorite.find(params[:id])
-
-
->>>>>>> f3e49afd0b9e3e7964d4ab4663a78f16e70f16d8
-  end
   
+
+
 
  
 
