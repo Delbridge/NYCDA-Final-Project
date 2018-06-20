@@ -1,21 +1,19 @@
 <h1>Show Results Page</h1>
 
-<%= form_tag favorites_display do %>
-	<% @search_results.each do |favorite, index| %>
-		<%= fields_for 'favorites []', favorite_with_index do |f, index| %>
+<%= form_tag favorites_display_path do %>
+	<% @search_results.each_with_index do |favorite, index| %>
 
 		<div class = "field">
-		<%= index +1 %>. <a href ="/favorites/<%=f.id%>"><%=f.name %></a><br>
-		<%= image_tag f.image.url(:thumb) %><br>
+			<%= index + 1 %> . <%= favorite["name"] %><br>
+			<%= image_tag favorite["image"] %>
 		</div>
 		
-		<%= hidden_field_tag "user_id", @user.id %>
-		<%= hidden_field_tag "title", @name.id %>
-		<%= hidden_field_tag "image", @image.id %>
-		<%= hidden_field_tag "description", @description.id %>
+		<%= hidden_field_tag "user_id", current_user.id %>
+		<%= hidden_field_tag "name", favorite["name"] %>
+		<%= hidden_field_tag "title", favorite["title"] %>
+		<%= hidden_field_tag "image", favorite["image"] %>
+		<%= hidden_field_tag "description", favorite["description"] %>
 
-
-		<% end %>
 	<% end %>
 
 	<div class ="submit">
