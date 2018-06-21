@@ -50,6 +50,9 @@ class FavoritesController < ApplicationController
 
   end
   
+  def landing
+    render "favorites/landing"
+  end
 
   
   
