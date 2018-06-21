@@ -4,14 +4,6 @@ class FavoritesController < ApplicationController
 
   end
 
-  def calendar
-    @favorites = Favorite.all
-
-  end
-
-  def landing
-  end
-
   def display
 
     @search_results = params[:search_results]
@@ -48,9 +40,13 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params[:id])
   end
 
-  
+
 
   def destroy
+    @favorite = Favorite.find(params[:project])
+    @favorite.destroy
+    redirect_to "/favorites/index"
+
 
   end
   
