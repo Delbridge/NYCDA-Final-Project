@@ -1,6 +1,20 @@
-<h1>Favorites#index</h1>
-<strong>KA-POW</strong>
+<h1>Favorites List</h1>
 
-<% @favorites.each do |f| %>
-    <%= f.title %>
-    <% end %>
+
+<% @favorites.each_with_index do |favorite, index| %><br />
+    
+
+    <%= index + 1 %>. <%= favorite["name"] %><br>
+    <%= favorite.title %><br>
+   	
+
+
+
+
+
+
+
+
+
+<hr>
+<% end %>
