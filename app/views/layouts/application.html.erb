@@ -13,14 +13,13 @@
 
 <nav>
     <% if !user_signed_in? %>
-    <%=link_to "home", root_path %> •
     <%= link_to "sign in", new_user_session_path %> •
     <%=link_to "sign up", new_user_registration_path %>
   <% end %>
 
   <% if user_signed_in? %>
     <%=link_to "Home", root_path %> •
-    <a href="/users/<%= current_user.id %>">User Profile</a>
+    <a href="/users/<%= current_user.id %>">User Profile</a> •
     <!-- <a href= " /users/edit"> Edit User Info. </a> • -->
     <a href= "/favorites/index">Your Favorite Heroes</a> •
     <%= link_to "Sign Out",destroy_user_session_path, method: :delete %>

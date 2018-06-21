@@ -14,21 +14,17 @@ class FavoritesController < ApplicationController
 
   def landing
   end
-
+  
   def display
+    
+    if !current_user
+      redirect_to "/favorites/index"
+    end
 
     @search_results = params[:search_results]
     @favorite = Favorite.new
     # array of character objects returned by search function
       # SET VALUES
-
-
-    if !current_user
-      redirect_to "/favorites/index"
-    else
-
-      # BUILD FORM BACK END HERE
-    end
 
   end
 
@@ -51,12 +47,19 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params[:id])
   end
 
-  
+
 
   def destroy
+    @favorite = Favorite.find(params[:project])
+    @favorite.destroy
+    redirect_to "/favorites/index"
+
 
   end
   
+  def landing
+    render "favorites/landing"
+  end
 
   
   

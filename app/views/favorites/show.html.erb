@@ -1,8 +1,12 @@
 
 <h1>Character Detail Show Page</h1>
-<p>Find me in app/views/favorites/show.html.erb</p>
 
-<%= @favorite.title %>
-<%= @favorite.name%>
-<%= @favorite.image%>
-<%= @favorite.description%>
+
+
+<%= @favorite.title%><hr> 
+<%= @favorite.name%><hr>
+<%= image_tag @favorite["image"], style: 'width: 100px; height: 100px' %><br>
+<%= @favorite.description%><hr>
+ 
+<%= link_to "Delete Hero", favorites_destroy_path(:project => @favorite.id), method: :delete %>
+
