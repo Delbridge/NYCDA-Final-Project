@@ -5,7 +5,9 @@
 
 		<div class = "field">
 			<%= index + 1 %> . <%= favorite["name"] %><br>
-			<%= image_tag favorite["image"] %>
+			<div style="width:150px; height: 150px;">
+				<%= image_tag favorite["image"], style: 'width: 100%; height: auto' %>
+			</div>
 		</div>
 		
 		<%= hidden_field_tag "user_id", current_user.id %>
@@ -14,7 +16,8 @@
 		<%= hidden_field_tag "image", favorite["image"] %>
 		<%= hidden_field_tag "description", favorite["description"] %>
 
-	<% end %>
+	<% end %><br /><br />
+
 
 	<div class ="submit">
 		<%= submit_tag %>
