@@ -6,7 +6,7 @@ class FavoritesController < ApplicationController
 
   def calendar
     @favorites = Favorite.all
-    @upcoming_comics = helpers.find_comics(@favorites)
+    @upcoming_comics = helpers.new_comics_search(@favorites)
   end
 
   def landing
