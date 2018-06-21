@@ -6,3 +6,7 @@
 <%= @favorite.name%>
 <%= @favorite.image%>
 <%= @favorite.description%>
+
+<%= link_to "Delete", @favorite,
+							method: :delete, data: {confirm: 'are you reallly really sure?'} %>
+                            redirect_to "favorites/index"

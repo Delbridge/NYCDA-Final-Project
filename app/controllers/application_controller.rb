@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
-
+require 'marvel_api'
 	def search
 		teller = params[:input].to_s
 		def search_character(input)
 			returned_characters = []
 			f_letter = input[0].to_s
-			require 'marvel_api'
+			
 			@client = Marvel::Client.new
 			@client.configure do |config|
 			  config.api_key = Rails.application.credentials.marvel_public_key
