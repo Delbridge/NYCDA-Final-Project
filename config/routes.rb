@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'favorites/display' => "favorites#display"
   get 'favorite/:id' => "favorites#show"
   get 'favorites/edit'
-  get '/guest' => "favorites#landing"
+  get 'favorites/landing' => "favorites#landing"
 
 
   devise_scope :user do
