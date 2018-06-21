@@ -4,26 +4,33 @@ class FavoritesController < ApplicationController
 
   end
 
+  def calendar
+    if !current_user
+      redirect_to "/favorites/guest"
+    end
+    @favorites = Favorite.all
+    @upcoming_comics = helpers.new_comics_search(@favorites)
+  end
+
+  def landing
+  end
+  
   def display
+    
+    if !current_user
+      redirect_to "/favorites/index"
+    end
 
     @search_results = params[:search_results]
     @favorite = Favorite.new
     # array of character objects returned by search function
       # SET VALUES
 
-
-    if !current_user
-      redirect_to "/favorites/index"
-    else
-
-      # BUILD FORM BACK END HERE
-    end
-
   end
 
   def create
    @favorite = Favorite.new
-   @favorite.title = params[:title]
+   @favorite.title = params[:title].split(",")
    @favorite.name = params[:name]
    @favorite.image = params[:image]
    @favorite.description = params[:description]

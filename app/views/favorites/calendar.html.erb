@@ -1,1 +1,9 @@
 <h1>Calendar Page</h1>
+
+<% @upcoming_comics.each do |ch_obj| %>
+	<h3><%= ch_obj["heading"] %></h3>
+	<% ch_obj["titles"].each do |title| %>
+		<%= title %><br>
+	<% end %>
+	<hr>
+<% end %>
