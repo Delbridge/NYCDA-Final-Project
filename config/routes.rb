@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get 'favorite/:id' => "favorites#show"
   get 'favorites/edit'
 
-#  devise_for :users, :controllers => { registrations: 'registratins' }
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
