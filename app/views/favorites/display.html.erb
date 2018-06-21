@@ -1,13 +1,15 @@
 <h1>Show Results Page</h1>
 
-<%= form_tag favorites_display_path do %>
-	<% @search_results.each_with_index do |favorite, index| %>
+<% @search_results.each_with_index do |favorite, index| %>
+	<%= form_for @favorite, url: create_path, method: :post do |f|%>
 
 		<div class = "field">
-			<%= index + 1 %> . <%= favorite["name"] %><br>
-			<div style="width:150px; height: 150px;">
-				<%= image_tag favorite["image"], style: 'width: 100%; height: auto' %>
-			</div>
+			
+ 				<%= index + 1 %>. <%= favorite["name"] %><br>
+					
+					<div style="width:150px; height: 150px;">
+					<%= image_tag favorite["image"], style: 'width: 100%; height: auto' %>
+					</div>
 		</div>
 		
 		<%= hidden_field_tag "user_id", current_user.id %>
@@ -16,10 +18,9 @@
 		<%= hidden_field_tag "image", favorite["image"] %>
 		<%= hidden_field_tag "description", favorite["description"] %>
 
-	<% end %><br /><br />
-
 
 	<div class ="submit">
-		<%= submit_tag %>
+		<%= submit_tag "Add to Favorites"%>
 	</div>
+	<% end %>
 <% end %>

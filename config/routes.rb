@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   resources :users
   root "favorites#index"
 
-  get 'favorites/index'
-  get 'favorites/display'
-  get 'favorites/show'
+# resources :favorites
+  get 'favorites/index' => "favorites#index"
+  get 'favorites/display' => "favorites#display"
+  get 'favorite/:id' => "favorites#show"
   get 'favorites/edit'
 
 
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   root "users#index"
 
   post "/search" => "application#search"
+  post "/create" => "favorites#create"
 
 
    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
