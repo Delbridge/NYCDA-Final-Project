@@ -1,24 +1,22 @@
 Rails.application.routes.draw do
 
+  root "favorites#calendar"
+
   devise_for :users
 
   resources :users
-  root "favorites#index"
 
 # resources :favorites
   get 'favorites/index' => "favorites#index"
   get 'favorites/display' => "favorites#display"
   get 'favorite/:id' => "favorites#show"
   get 'favorites/edit'
+  get '/guest' => "favorites#landing"
 
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-
-  resources :users
-
-  root "users#index"
 
   post "/search" => "application#search"
   post "/create" => "favorites#create"
