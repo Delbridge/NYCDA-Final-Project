@@ -5,6 +5,9 @@ class FavoritesController < ApplicationController
   end
 
   def calendar
+    if !current_user
+      redirect_to "/favorites/guest"
+    end
     @favorites = Favorite.all
     @upcoming_comics = helpers.new_comics_search(@favorites)
   end
