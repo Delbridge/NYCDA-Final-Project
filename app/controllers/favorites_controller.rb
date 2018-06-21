@@ -7,6 +7,7 @@ class FavoritesController < ApplicationController
   def display
 
     @search_results = params[:search_results]
+    @favorite = Favorite.new
     # array of character objects returned by search function
       # SET VALUES
 
@@ -16,40 +17,31 @@ class FavoritesController < ApplicationController
     else
 
       # BUILD FORM BACK END HERE
-
     end
-
-
-
-        #   @favorite=Favorite.new
-    # end
-
-    # @search_results = []
-    # Favorite.all.each do 
-      # @search_results << Favorite.new
 
   end
 
   def create
-    @favorite = Favorite.new(favorite_params)
-    @favorite.user_id = current_user.id
-        # if params.has_key?("favorite")
-        #   Favorite.create(favorite_params(params["favorite"]))
-        # else
-        #   params["favorites"].each do |favorite|
-        #   Favorite.create(favorite_params(favorite))
-        # end
-    
-        # if @favorite.save
-        #   flash[:success] = "Here are your results!"
-        #   redirect_to "favorites/display"
-        # else
-        #   render "/"
-        # end
+   @favorite = Favorite.new
+   @favorite.title = params[:title]
+   @favorite.name = params[:name]
+   @favorite.image = params[:image]
+   @favorite.description = params[:description]
+   @favorite.user_id = current_user.id
+        if @favorite.save
+          flash[:success] = "Here are your results!"
+          redirect_to "/favorite/#{@favorite.id}"
+        else
+          render "/"
+        end
   end
 
   def show
     @favorite = Favorite.find(params[:id])
+  end
+
+  def destroy
+
   end
   
 
@@ -58,7 +50,7 @@ class FavoritesController < ApplicationController
 
   private 
   def favorite_params
-    params.require(:favorite).permit(:title, :description, :name, :image)
+    params.require(:favorite).permit(:title, :description, :name, :image, :user_id)
 
   end
 end
