@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 					titles = []
 					appearances.each do |comic|
 						if comic["name"].split(" (")[1].split(")")[0].to_i > 2000 && titles.include?(comic["name"].split(" (")[0]) == false
-							titles.push(comic["name"].split(" (")[0])
+							titles.push(comic["name"].split(" (")[0] + ",")
 						end
 					end
 					ch_object["title"] = titles

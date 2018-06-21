@@ -6,7 +6,7 @@ class FavoritesController < ApplicationController
 
   def calendar
     @favorites = Favorite.all
-
+    @upcoming_comics = helpers.find_comics(@favorites)
   end
 
   def landing
@@ -31,7 +31,7 @@ class FavoritesController < ApplicationController
 
   def create
    @favorite = Favorite.new
-   @favorite.title = params[:title]
+   @favorite.title = params[:title].split(",")
    @favorite.name = params[:name]
    @favorite.image = params[:image]
    @favorite.description = params[:description]

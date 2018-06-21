@@ -1,1 +1,7 @@
 <h1>Calendar Page</h1>
+
+<% @upcoming_comics.each do |list| %>
+	<% list.each do |title| %>
+		<%= title %><br>
+	<% end %>
+<% end %>
