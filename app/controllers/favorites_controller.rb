@@ -4,6 +4,14 @@ class FavoritesController < ApplicationController
 
   end
 
+  def calendar
+    @favorites = Favorite.all
+
+  end
+
+  def landing
+  end
+
   def display
 
     @search_results = params[:search_results]
