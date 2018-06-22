@@ -32,6 +32,19 @@ class FavoritesController < ApplicationController
   end
 
   def create
+
+   @favorite = Favorite.new
+   @favorite.title = params[:title].split(",")
+   @favorite.name = params[:name]
+   @favorite.image = params[:image]
+   @favorite.description = params[:description]
+   @favorite.user_id = current_user.id
+        if @favorite.save
+          flash[:success] = "Here are your results!"
+          redirect_to "/favorites/index"
+        else
+          render "/"
+
     params[:number_of_submits].to_i.times do |i|
         if params["wanted"+i.to_s] == "true"
          @favorite = Favorite.new
@@ -46,6 +59,7 @@ class FavoritesController < ApplicationController
             else
               # redirect_to "/"
             end
+
         end
     end
     redirect_to "/favorites/index"
@@ -100,10 +114,4 @@ end
 
 
 
-
-
-
-
-
-
-
+end
