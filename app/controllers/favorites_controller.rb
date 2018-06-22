@@ -29,18 +29,22 @@ class FavoritesController < ApplicationController
   end
 
   def create
-   @favorite = Favorite.new
-   @favorite.title = params[:title].split(",")
-   @favorite.name = params[:name]
-   @favorite.image = params[:image]
-   @favorite.description = params[:description]
-   @favorite.user_id = current_user.id
-        if @favorite.save
-          flash[:success] = "Here are your results!"
-          redirect_to "/favorite/#{@favorite.id}"
-        else
-          render "/"
-        end
+      if params[:wanted] == "true"
+       @favorite = Favorite.new
+       @favorite.title = params[:title].split(",")
+       @favorite.name = params[:name]
+       @favorite.image = params[:image]
+       @favorite.description = params[:description]
+       @favorite.user_id = current_user.id
+          if @favorite.save
+            flash[:success] = "Here are your results!"
+            redirect_to "/favorite/#{@favorite.id}"
+          else
+            redirect_to "/"
+          end
+      else
+          redirect_to "/favorites/index"
+      end
   end
 
   def show

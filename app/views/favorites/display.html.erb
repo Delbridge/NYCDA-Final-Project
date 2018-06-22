@@ -18,6 +18,8 @@
 		<%= hidden_field_tag "image", favorite["image"] %>
 		<%= hidden_field_tag "description", favorite["description"] %>
 
+		<%= select_tag(:wanted, options_for_select([["Add to your favorites?", false],["Yes!", true],["No", false]]))%>
+
 
 	<div class ="submit">
 		<%= submit_tag "Add to Favorites"%>
