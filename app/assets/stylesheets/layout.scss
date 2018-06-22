@@ -1,0 +1,28 @@
+@import "variables";
+
+body {
+	display: grid;
+	grid-template-areas: 'head head head'
+		'nav nav nav'
+		'. body .';
+	grid-template-columns: 1fr 20fr 1fr;
+	background-color:$black;
+	font-family: $body-font;
+}
+
+header {
+	grid-area: head;
+	background-color: $blue;
+	height:70px;
+}
+
+nav {
+	grid-area: nav;
+	background-color: $red;
+	height:40px;
+}
+
+#bodycontainer {
+	grid-area:body;
+	background-color:$white;
+}
