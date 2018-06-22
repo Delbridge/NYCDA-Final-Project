@@ -6,10 +6,23 @@
 
 	<% @form_submissions.each_with_index do |character, i| %>
 
+
 		<div class = "field">
+
+		
+				<%= index + 1 %>. <%= favorite["name"] %><br>
+					
+					<div style="width:150px; height: 150px;">
+					<%= image_tag favorite["image"], style: 'width: 100%; height: auto' %>
+					</div>
+
 			<%= i + 1 %>. <%= @search_results[i]["name"] %><br>
 			<div style="width:150px; height: 150px;"><%= image_tag @search_results[i]["image"], style: 'width: 100%; height: auto' %></div>
+
 		</div>
+	
+
+		
 		
 		<%= hidden_field_tag "name"+i.to_s, @search_results[i]["name"] %>
 		<%= hidden_field_tag "title"+i.to_s, @search_results[i]["title"] %>
@@ -25,3 +38,4 @@
 	<div class ="submit"><%= submit_tag "Add to Favorites"%></div>
 
 <% end %>
+
