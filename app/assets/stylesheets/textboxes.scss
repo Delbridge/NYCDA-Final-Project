@@ -1,1 +1,57 @@
 @import "variables";
+
+.container {
+
+	border: 2px white;
+
+
+
+}
+
+
+
+.mslandingtitle {
+
+	color: white; 
+	text-align: center;
+	text-shadow: 2px 2px #FF0000;
+	text-decoration: underline;
+	margin-bottom: 20px;
+
+}
+
+.mslandingtitle, h2 {
+
+	font-size: 40px;
+
+}
+
+
+.textboxes {
+
+	background-color: white;
+	width: 30%;
+	height: 300px;
+	margin-top: 20px;
+	margin-left: 150px;
+	position: relative;
+	left: 100px;
+	// margin-right: 30px;
+
+
+}
+
+.textboxes h3 {
+
+	text-align: center;
+	text-decoration: underline;
+
+
+}
+
+.carousel-inner {
+
+	margin-left: 50px;
+
+
+}
