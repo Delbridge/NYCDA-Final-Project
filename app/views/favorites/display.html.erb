@@ -22,10 +22,10 @@
 
 	<% end %>
 
-	<div class ="submit"><%= submit_tag "Add to Favorites"%></div>
+	<div class="submit"><%= submit_tag "Add to Favorites"%></div>
 
 <% end %>
-ag("wanted"+i.to_s, options_for_select([["Add to your favorites?", false],["Yes!", true],["No", false]]))%>
+<% select_tag("wanted"+i.to_s, options_for_select([["Add to your favorites?", false],["Yes!", true],["No", false]]))%>
 
 		<hr>
 
