@@ -11,7 +11,6 @@
 			<div style="width:150px; height: 150px;"><%= image_tag @search_results[i]["image"], style: 'width: 100%; height: auto' %></div>
 		</div>
 		
-		<%= hidden_field_tag "user_id"+i.to_s, current_user.id %>
 		<%= hidden_field_tag "name"+i.to_s, @search_results[i]["name"] %>
 		<%= hidden_field_tag "title"+i.to_s, @search_results[i]["title"] %>
 		<%= hidden_field_tag "image"+i.to_s, @search_results[i]["image"] %>
