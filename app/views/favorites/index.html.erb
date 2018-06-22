@@ -2,17 +2,17 @@
 
 
 <% @favorites.each_with_index do |favorite, index| %><br />
-    
+
 
     <%= index + 1 %>. <a href = "/favorite/<%= favorite.id %>"><%= favorite["name"] %></a><br>
-   
+
     <br><br />
     <%= image_tag favorite["image"], style: 'width: 100px; height: 100px' %><br />
 
     <%= link_to "Delete Hero", favorites_destroy_path(:project => favorite.id), method: :delete %>
-   	
 
- 
+
+
 
 
 <hr>

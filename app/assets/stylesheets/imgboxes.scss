@@ -1,1 +1,9 @@
 @import "variables";
+
+.rows{
+  display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+
+
+}
