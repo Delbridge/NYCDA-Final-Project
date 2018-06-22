@@ -30,7 +30,6 @@ gem 'devise'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
   # gem 'wdm', '>= 0.1.0'
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 
 # Use Capistrano for deployment
