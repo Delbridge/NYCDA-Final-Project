@@ -13,13 +13,16 @@ body {
 header {
 	grid-area: head;
 	background-color: $blue;
-	height:70px;
+	height:80px;
+	background: linear-gradient(to right, $blue , $dkblue);
 }
 
 nav {
 	grid-area: nav;
 	background-color: $red;
+	background: linear-gradient(to right, $red , $yellow);
 	height:40px;
+	margin-bottom:15px;
 }
 
 #bodycontainer {
