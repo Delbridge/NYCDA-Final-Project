@@ -3,10 +3,11 @@
 
 
 
-<%= @favorite.title%><hr> 
-<%= @favorite.name%><hr>
-<%= image_tag @favorite["image"], style: 'width: 100px; height: 100px' %><br>
-<%= @favorite.description%><hr>
+
+<div><%= @favorite.name%><hr></div>
+<div><%= image_tag @favorite["image"], style: 'width: 100px; height: 100px' %></div><br>
+<div><%= @favorite.description%><hr></div><br>
+<div><%= @favorite.title%><hr></div><br>
  
-<%= link_to "Delete Hero", favorites_destroy_path(:project => @favorite.id), method: :delete %>
+<div><%= link_to "Delete Hero", favorites_destroy_path(:project => @favorite.id), method: :delete %>
 
