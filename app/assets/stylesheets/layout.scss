@@ -24,5 +24,6 @@ nav {
 
 #bodycontainer {
 	grid-area:body;
-	background-color:$white;
+	display: flex;
+	flex-wrap: wrap;
 }
