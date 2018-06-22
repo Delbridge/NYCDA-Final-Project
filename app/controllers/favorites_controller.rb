@@ -22,30 +22,53 @@ class FavoritesController < ApplicationController
     end
 
     @search_results = params[:search_results]
-    @favorite = Favorite.new
-    # array of character objects returned by search function
-      # SET VALUES
+    @many_returned = @search_results.length
+    @form_submissions = []
+
+    @many_returned.times do 
+      @form_submissions.push(Favorite.new)
+    end
 
   end
 
   def create
-      if params[:wanted] == "true"
-       @favorite = Favorite.new
-       @favorite.title = params[:title].split(",")
-       @favorite.name = params[:name]
-       @favorite.image = params[:image]
-       @favorite.description = params[:description]
-       @favorite.user_id = current_user.id
-          if @favorite.save
-            flash[:success] = "Here are your results!"
-            redirect_to "/favorite/#{@favorite.id}"
-          else
-            redirect_to "/"
-          end
-      else
-          redirect_to "/favorites/index"
-      end
+    params[:number_of_submits].to_i.times do |i|
+        if params["wanted"+i.to_s] == "true"
+         @favorite = Favorite.new
+         @favorite.title = params["title"+i.to_s].split(",")
+         @favorite.name = params["name"+i.to_s]
+         @favorite.image = params["image"+i.to_s]
+         @favorite.description = params["description"+i.to_s]
+         @favorite.user_id = current_user.id
+            if @favorite.save
+              flash[:success] = "Here are your results!"
+              # redirect_to "/favorite/#{@favorite.id}"
+            else
+              # redirect_to "/"
+            end
+        end
+    end
+    redirect_to "/favorites/index"
   end
+
+  # def create
+  #     if params[:wanted] == "true"
+  #      @favorite = Favorite.new
+  #      @favorite.title = params[:title].split(",")
+  #      @favorite.name = params[:name]
+  #      @favorite.image = params[:image]
+  #      @favorite.description = params[:description]
+  #      @favorite.user_id = current_user.id
+  #         if @favorite.save
+  #           flash[:success] = "Here are your results!"
+  #           redirect_to "/favorite/#{@favorite.id}"
+  #         else
+  #           redirect_to "/"
+  #         end
+  #     else
+  #         redirect_to "/favorites/index"
+  #     end
+  # end
 
   def show
     @favorite = Favorite.find(params[:id])
@@ -69,7 +92,7 @@ class FavoritesController < ApplicationController
   
 
   private 
-  def favorite_params
+  def favorite_params(my_params)
     params.require(:favorite).permit(:title, :description, :name, :image, :user_id)
 
   end

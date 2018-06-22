@@ -1,29 +1,28 @@
 <h1>Show Results Page</h1>
+	
+<%= form_tag create_path do %>
 
-<% @search_results.each_with_index do |favorite, index| %>
-	<%= form_for @favorite, url: create_path, method: :post do |f|%>
+	<%= hidden_field_tag "number_of_submits", @many_returned %>
+
+	<% @form_submissions.each_with_index do |character, i| %>
 
 		<div class = "field">
-			
- 				<%= index + 1 %>. <%= favorite["name"] %><br>
-					
-					<div style="width:150px; height: 150px;">
-					<%= image_tag favorite["image"], style: 'width: 100%; height: auto' %>
-					</div>
+			<%= i + 1 %>. <%= @search_results[i]["name"] %><br>
+			<div style="width:150px; height: 150px;"><%= image_tag @search_results[i]["image"], style: 'width: 100%; height: auto' %></div>
 		</div>
 		
-		<%= hidden_field_tag "user_id", current_user.id %>
-		<%= hidden_field_tag "name", favorite["name"] %>
-		<%= hidden_field_tag "title", favorite["title"] %>
-		<%= hidden_field_tag "image", favorite["image"] %>
-		<%= hidden_field_tag "description", favorite["description"] %>
+		<%= hidden_field_tag "user_id"+i.to_s, current_user.id %>
+		<%= hidden_field_tag "name"+i.to_s, @search_results[i]["name"] %>
+		<%= hidden_field_tag "title"+i.to_s, @search_results[i]["title"] %>
+		<%= hidden_field_tag "image"+i.to_s, @search_results[i]["image"] %>
+		<%= hidden_field_tag "description"+i.to_s, @search_results[i]["description"] %>
 
-		<%= select_tag(:wanted, options_for_select([["Add to your favorites?", false],["Yes!", true],["No", false]]))%>
+		<%= select_tag("wanted"+i.to_s, options_for_select([["Add to your favorites?", false],["Yes!", true],["No", false]]))%>
 
+		<hr>
 
-	<div class ="submit">
-		<%= submit_tag "Add to Favorites"%>
-	</div>
 	<% end %>
-	<hr>
+
+	<div class ="submit"><%= submit_tag "Add to Favorites"%></div>
+
 <% end %>
