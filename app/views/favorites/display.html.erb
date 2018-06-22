@@ -3,14 +3,18 @@
 <% @search_results.each_with_index do |favorite, index| %>
 	<%= form_for @favorite, url: create_path, method: :post do |f|%>
 
+
 		<div class = "field">
-			
- 				<%= index + 1 %>. <%= favorite["name"] %><br>
+		
+				<%= index + 1 %>. <%= favorite["name"] %><br>
 					
 					<div style="width:150px; height: 150px;">
 					<%= image_tag favorite["image"], style: 'width: 100%; height: auto' %>
 					</div>
 		</div>
+	
+
+		
 		
 		<%= hidden_field_tag "user_id", current_user.id %>
 		<%= hidden_field_tag "name", favorite["name"] %>
@@ -25,3 +29,4 @@
 	<% end %>
 	<hr>
 <% end %>
+

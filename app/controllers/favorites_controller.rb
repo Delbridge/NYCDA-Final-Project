@@ -37,7 +37,7 @@ class FavoritesController < ApplicationController
    @favorite.user_id = current_user.id
         if @favorite.save
           flash[:success] = "Here are your results!"
-          redirect_to "/favorite/#{@favorite.id}"
+          redirect_to "/favorites/index"
         else
           render "/"
         end
