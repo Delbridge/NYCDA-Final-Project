@@ -1,4 +1,4 @@
-
+	
 <div class = "characterdetails">
 	<h1>Character Details</h1>
 </div><br />
@@ -10,18 +10,25 @@
 		<%= link_to "Delete Hero", favorites_destroy_path(:project => @favorite.id), method: :delete %>
 </div><br />
 
-<div class = "charimage"><%= image_tag @favorite["image"], style: 'width: 450px; height: 450px' %></div><br>
+<div class = "charimage"><%= image_tag @favorite["image"], style: 'width: 578px; height: 444px' %></div><br>
 
 <!-- <div class="vl"></div> -->
 
 <div class = "charbox1"><h3><strong>Description</strong></h3>
-	<%= @favorite.description%></div><br>
+	<h4><%= @favorite.description%></h4>
+</div><br>
 
 <div class = "charbox2">
-	<h3><strong>Comic Titles</strong></h3><br />
+	<h3><strong>Recommended: Upcoming Comic Titles</strong></h3><br />
 	<% @favorite.title.each_with_index do |c, index| %>
-	<%= index + 1 %>. <%= c %><br /><hr>
+		
+	<h4><%= index + 1 %>. <%= c %></h4>
+
+	<br />
+	<hr>
+	
 	<% end %>
+
 </div>
 	 
 	
