@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ComicsForum</title>
+    <title>Marvel Pull List Builder</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
@@ -17,25 +17,25 @@
   <body>
 
     <header>
-      <img src="https://news.marvel.com/wp-content/uploads/2017/06/d23_post_master-960x540.jpg" height="60px">
-      
+        <%=image_tag("marvelogo.png")%>
+        <h1>Pull List Builder</h1>
     </header>
 
 <nav>
     <% if !user_signed_in? %>
-    <%= link_to "sign in", new_user_session_path %> •
+    <%= link_to "sign in", new_user_session_path %> 
     <%=link_to "sign up", new_user_registration_path %>
   <% end %>
 
   <% if user_signed_in? %>
-    <%=link_to "Home", root_path %> •
-    <a href="/users/<%= current_user.id %>">User Profile</a> •
-    <!-- <a href= " /users/edit"> Edit User Info. </a> • -->
-    <a href= "/favorites/index">Your Favorite Heroes</a> •
+    <%=link_to "Home", root_path %>
+    <!-- <a href="/users/<%= current_user.id %>">User Profile</a>  -->
+    <a href= " /users/edit"> Edit User Info </a>
+    <a href= "/favorites/index">Your Favorite Heroes</a> 
     <%= link_to "Sign Out",destroy_user_session_path, method: :delete %>
     
     <%= form_tag(search_path) do %>
-        <%= text_field_tag :input %>
+        <%= text_field_tag :input, nil, :placeholder => "search" %>
         <%= submit_tag "Find New Heroes" %>
     <% end %>
   
@@ -47,7 +47,7 @@
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
     <%= yield %>
-     </div>
+  </div>
      
   </body>
 </html>
