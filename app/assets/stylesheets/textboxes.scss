@@ -11,17 +11,18 @@
 	text-decoration: underline;
 	margin-bottom: 10px;
 	border: 2px solid white;
-	background-color: $blue;
-	background: linear-gradient(to right, $blue , $dkblue);
+	background-color: $red;
+	background: linear-gradient(to right, $blue , $red);
 	width: 92%;
 	margin-left: 30px;
-	height: 80px;
+	height: 100px;
+	border-radius: 25px;
 
 }
 
-.mslandingtitle, h2 {
+.mslandingtitle h2 {
 
-	font-size: 40px;
+	font-size: 60px;
 
 }
 
@@ -29,16 +30,17 @@
 .textboxes {
 
 	background-color: white;
-	width: 33.3%;
-	height: 300px;
+	width: 30%;
+	height: 285px;
 	margin-top: 10px;
 	margin-left: 30px;
 	position: relative;
-	left: 210px;
+	left: 300px;
 	background-color: $red;
-	background: linear-gradient(to right, $yellow , $red);
+	background: linear-gradient(to right, $blue , $red);
 	padding-left: 5px;
 	// margin-right: 30px;
+	border-radius: 25px;
 
 
 }
@@ -47,7 +49,7 @@
 
 	text-align: center;
 	text-decoration: underline;
-	color: black;
+	color: white;
 	text-shadow: 1px 1px #FF0000;
 	font-size: 28px;
 
