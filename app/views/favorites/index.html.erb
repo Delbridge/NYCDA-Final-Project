@@ -2,8 +2,6 @@
 
 
 <% @favorites.each_with_index do |favorite, index| %><br />
-    
-
     <%= index + 1 %>. <a href = "/favorite/<%= favorite.id %>"><%= favorite["name"] %></a><br>
    
     <br><br />
