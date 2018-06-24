@@ -1,1 +1,71 @@
 @import "variables";
+
+.images-flex{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.i{
+  box-shadow:1px 4px 20px #777777;
+  width: 175px;
+  height: 175px;
+}
+
+.name-params{
+  // background-color: GREEN;
+  // margin: -40px;
+  // text-decoration-line: underline;
+  color: $blue;
+  font-style:$body-font;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+#sub-b{
+  color:$red;
+  font-style:$body-font;
+  font-size: 15px;
+  margin-top: 20px;
+  // background-color: red;
+}
+
+#sub-b:hover{
+  color: $blue;
+  background-color: gold;
+}
+
+.field{
+  width:170px;
+  height: 170px;
+  // background-color: gold;
+}
+
+.submit1{
+  color:silver;
+  width: 20px;
+  height: 20px;
+}
+// .bordered {
+//    border: solid .5em transparent;
+//    box-sizing: border-box;
+//    /** relative so that our ::before absolute block can position itself according to it's parent block **/
+//    position: relative;
+// }
+//
+// .bordered::before {
+//   content: '';
+//   border: 1px solid red;
+//   /** pseudo-elements are inline by default **/
+//   display: block;
+//   /** same height and width than our column **/
+//   width: 100%;
+//   height: 100%;
+//   /** position absolute starting at the top and left of our column **/
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   /** we want the pseudo-element to be behind our real column **/
+//   z-index: -1;
+// }
