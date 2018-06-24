@@ -18,7 +18,7 @@
 
     <header>
       <img src="https://news.marvel.com/wp-content/uploads/2017/06/d23_post_master-960x540.jpg" height="60px">
-      
+
     </header>
 
 <nav>
@@ -33,12 +33,12 @@
     <!-- <a href= " /users/edit"> Edit User Info. </a> • -->
     <a href= "/favorites/index">Your Favorite Heroes</a> •
     <%= link_to "Sign Out",destroy_user_session_path, method: :delete %>
-    
+
     <%= form_tag(search_path) do %>
         <%= text_field_tag :input %>
         <%= submit_tag "Find New Heroes" %>
     <% end %>
-  
+
   <% end %>
 
  </nav>
@@ -48,6 +48,6 @@
        <p class="alert"><%= alert %></p>
     <%= yield %>
      </div>
-     
+
   </body>
 </html>
