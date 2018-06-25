@@ -2,5 +2,32 @@
 
 .calentry {
 	width:100% !important;
-	height: auto;
+	height: auto !important;
+	position: relative;
+	padding:0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	margin-bottom:30px;
+}
+
+.calhead {
+	position: absolute;
+	top:0;
+	border-top-left-radius: 25px !important;
+	width:100% !important;
+}
+
+.calentry b {
+	font-family: $title-font;
+}
+
+.callist {
+	margin-bottom:5px;
+}
+
+.calholder {
+	display: flex;
+	flex-wrap:wrap;
+	padding: 10px 20px;
+	font-size:16px;
 }

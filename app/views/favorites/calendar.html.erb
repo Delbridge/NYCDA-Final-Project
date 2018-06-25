@@ -3,9 +3,12 @@
 <% @upcoming_comics.each do |ch_obj| %>
 	<% if ch_obj["titles"].length > 0 %>
 	<div class="textboxes calentry">
-	<h3><%= ch_obj["heading"] %></h3>
+	<div class = "charname calhead"><%= ch_obj["heading"] %></div>
 	<% ch_obj["titles"].each do |title| %>
-		<%= title[0].capitalize %> — out on <% Date.parse(title[1]) %><br>
+	<div class="calholder">
+		<div class="callist" style="width:60%;"><b><%= title[0] %></b></div>
+		<div class="callist" style="width:40%;">out on <%= Date.parse(title[1]).strftime("%B %-d") %></div>
+	</div>
 	<% end %>
 	</div>
 	<% end %>

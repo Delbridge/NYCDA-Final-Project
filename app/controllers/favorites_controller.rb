@@ -5,6 +5,7 @@ class FavoritesController < ApplicationController
   end
 
   def calendar
+    require 'date'
     if !current_user
       redirect_to "/favorites/guest"
     end
