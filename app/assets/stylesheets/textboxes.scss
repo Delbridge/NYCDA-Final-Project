@@ -2,17 +2,25 @@
 
 
 .mslandingtitle {
+
+	color: white; 
 	text-align: center;
+	text-shadow: 2px 2px #FF0000;
+	text-decoration: underline;
 	margin-bottom: 10px;
 	border: 2px solid white;
-	background-color: $white;
+	background-color: $red;
+	background: linear-gradient(to right, $blue , $red);
 	width: 92%;
-	height: 100px;
+	// height: 100px;
 	border-radius: 25px;
+
 }
 
 .mslandingtitle h2 {
+
 	font-size: 60px;
+
 }
 
 
