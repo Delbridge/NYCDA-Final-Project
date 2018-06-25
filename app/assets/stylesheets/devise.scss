@@ -28,11 +28,20 @@
 
 }
 
+.sessionsheader, .new_user {
+	width: 100%;
+}
+
+.links {
+	margin-top:10px;
+	text-align:left;
+	width:100%;
+}
+
 .sessionsheader h2 {
 
-	position: relative;
-	left: 300px;
-	margin-left: 250px;
+	display:block;
+	width: 100%;
 	color: white;
 
 }
