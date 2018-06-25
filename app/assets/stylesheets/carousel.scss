@@ -2,7 +2,24 @@
 
 .carousel-inner {
 
-	margin-left: 30px;
+	
 
 
+}
+
+#myCarousel {
+	width: 100%;
+	text-align:center;
+	height: 500px;
+	overflow:hidden;
+	margin:10px 0;
+}
+
+.item img {
+	width:100%;
+}
+
+.tbsmall {
+	width:45% !important;
+	margin-bottom:20px;
 }
