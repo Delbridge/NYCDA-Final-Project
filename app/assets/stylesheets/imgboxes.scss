@@ -17,28 +17,34 @@
 
 .i img {
   border-radius: 50%;
-  border: 10px solid white;
+  border: 10px solid #57a7cc;
   width:175px;
   height:175px;
 }
-
-h1{
- color:white;
-}
+//
+// h3 {
+//   font-size: 35px;
+//   background: -webkit-linear-gradient(#eee, #333);
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+// }
 
 .name-params{
   // background-color: GREEN;
   // margin: -40px;
   // text-decoration-line: underline;
+  border-radius: 25px;
   font-style:$body-font;
-  font-size: 17px;
+  font-size: 15px;
   height: 60px;
-  position: absolute;
+  // position: absolute;
   top: 25%;
   text-align:center;
+  color: black;
+  text-shadow: 2px 2px 4px #7996c6;
   width:175px;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding:2px 20px;
+  background:linear-gradient(to bottom right, #bf4040, #f7f271);
+  padding:8px;
   font-family: $title-font;
   text-transform: uppercase;
 }
@@ -46,19 +52,23 @@ h1{
 a .name-params {
   color: #0f4760;
   letter-spacing: 1px;
+  margin-top: 10px;
+
 }
 
 #sub-b{
-  color:$red;
+  color:$blue;
   font-style:$body-font;
   font-size: 15px;
   margin-top: 20px;
   // background-color: red;
+
+// box-shadow: 0 4px 2px 5px gray;
 }
 
 #sub-b:hover{
-  color: $blue;
-  background-color: #f9c300;
+  color: $red;
+  background-color: $blue;
 }
 
 .field{
@@ -78,22 +88,25 @@ a .name-params {
 }
 
 .submit1{
-  // color:silver;
-  position: absolute;
+
+  color:#e08618;
+  // #db841a
+  // position: absolute;
   top: 145px;
-  left: 350px;
+  right: 350px;
   width: 175px;
   height: 30px;
   display: block;
+
 }
-// .bordered {
+// h1 {
 //    border: solid .5em transparent;
 //    box-sizing: border-box;
 //    /** relative so that our ::before absolute block can position itself according to it's parent block **/
 //    position: relative;
 // }
 //
-// .bordered::before {
+// h1:before {
 //   content: '';
 //   border: 1px solid red;
 //   /** pseudo-elements are inline by default **/

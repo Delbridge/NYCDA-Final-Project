@@ -1,14 +1,18 @@
+
 <h1>Search Results</h1>
+
 
 <% if @search_results %>
 <div class="searchfield">
 <%= form_tag create_path do %>
+		<div class="images-flex">
 	<%= hidden_field_tag "number_of_submits", @many_returned %>
 	  <% @form_submissions.each_with_index do |character, i| %>
+
 					<div class = "field">
 
-						  <div class="i"><%= image_tag @search_results[i]["image"] %>
-						  <div class = "name-params">	<%= @search_results[i]["name"] %>	</div></div>
+						  <div class="i"><%= image_tag @search_results[i]["image"] %></div>
+						  <div class = "name-params">	<%= @search_results[i]["name"] %>	</div>
 							<%= hidden_field_tag "name"+i.to_s, @search_results[i]["name"] %>
 							<%= hidden_field_tag "title"+i.to_s, @search_results[i]["title"] %>
 							<%= hidden_field_tag "image"+i.to_s, @search_results[i]["image"] %>

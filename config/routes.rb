@@ -4,19 +4,18 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
+  # resources :users
 
 # resources :favorites
   get 'favorites/index' => "favorites#index"
   get 'favorites/display' => "favorites#display"
   get 'favorite/:id' => "favorites#show"
-  get 'favorites/edit'
+  get 'favorites/edit' => "favorites#edit"
   get 'favorites/landing' => "favorites#landing"
-
-
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-  end
 
   post "/search" => "application#search"
   post "/create" => "favorites#create"
