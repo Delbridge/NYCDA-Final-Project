@@ -1,11 +1,12 @@
-<div class ="spotlight-container">
-<h1>Look Who Decided To Show Up</h1>
+
+<h3>Look Who Decided To Show Up</h3>
 
 <%= form_tag create_path do %>
+		<div class="images-flex">
 	<%= hidden_field_tag "number_of_submits", @many_returned %>
 	  <% @form_submissions.each_with_index do |character, i| %>
 
-					<div class="images-flex">
+
 					<div class = "field">
 
 							<div class = "name-params">	<%= i + 1 %>. <%= @search_results[i]["name"] %>	</div>
@@ -26,4 +27,3 @@
 	<div class ="submit1"><%= submit_tag "Add to Favorites"%></div>
 
 <% end %>
-<div>

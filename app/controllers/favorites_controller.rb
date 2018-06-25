@@ -6,7 +6,7 @@ class FavoritesController < ApplicationController
 
   def calendar
     if !current_user
-      redirect_to "/favorites/guest"
+      redirect_to "/favorites/landing"
     end
     @favorites = Favorite.all
     @upcoming_comics = helpers.new_comics_search(@favorites)
@@ -14,9 +14,9 @@ class FavoritesController < ApplicationController
 
   def landing
   end
-  
+
   def display
-    
+
     if !current_user
       redirect_to "/favorites/index"
     end
@@ -25,7 +25,7 @@ class FavoritesController < ApplicationController
     @many_returned = @search_results.length
     @form_submissions = []
 
-    @many_returned.times do 
+    @many_returned.times do
       @form_submissions.push(Favorite.new)
     end
 
@@ -75,7 +75,7 @@ class FavoritesController < ApplicationController
   def show
 
     @favorite = Favorite.find(params[:id])
-    
+
 
   end
 
@@ -88,15 +88,15 @@ class FavoritesController < ApplicationController
 
 
   end
-  
+
   def landing
     render "favorites/landing"
   end
 
-  
-  
 
-  private 
+
+
+  private
   def favorite_params(my_params)
     params.require(:favorite).permit(:title, :description, :name, :image, :user_id)
 

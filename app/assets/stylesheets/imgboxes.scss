@@ -18,10 +18,13 @@
   width: 175px;
   height: 175px;
 }
-
-h1{
- color:white;
-}
+//
+// h3 {
+//   font-size: 35px;
+//   background: -webkit-linear-gradient(#eee, #333);
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+// }
 
 .name-params{
   // background-color: GREEN;
@@ -43,7 +46,7 @@ h1{
 
 #sub-b:hover{
   color: $blue;
-  background-color: #f9c300;
+  background-color: $blue;
 }
 
 .field{
@@ -53,18 +56,18 @@ h1{
 }
 
 .submit1{
-  color:silver;
+  color:$red;
   width: 20px;
   height: 20px;
 }
-// .bordered {
+// h1 {
 //    border: solid .5em transparent;
 //    box-sizing: border-box;
 //    /** relative so that our ::before absolute block can position itself according to it's parent block **/
 //    position: relative;
 // }
 //
-// .bordered::before {
+// h1:before {
 //   content: '';
 //   border: 1px solid red;
 //   /** pseudo-elements are inline by default **/
@@ -106,7 +109,4 @@ body:before{
 	background-image: -webkit-gradient(radial, 50% 35%, 100, 50% 35%, 350,
 				from(rgba(255,255,255,0.09)), to(rgba(255,255,255,0)));
 	-webkit-transform: scale(1.0,0.3);
-
-
-
 }
