@@ -26,14 +26,15 @@ require 'marvel_api'
 					ch_object["title"] = titles
 					ch_object["image"] = character["thumbnail"]["path"] + "." + character["thumbnail"]["extension"]
 					ch_object["description"] = character["description"]
-					returned_characters.push(ch_object)
+					if returned_characters.length < 6
+						returned_characters.push(ch_object)
+					end
 				end
 			end
 			return returned_characters
 		end
 		sender = search_character(teller)
-		# sender="hi"
-		redirect_to favorites_display_url(search_results: sender)
+			redirect_to favorites_display_url(search_results: sender)
 
 		# sends an ARRAY of character OBJECTS to the FAVORITES#DISPLAY view
 			# each object has a name string, description string, image string, and a title array

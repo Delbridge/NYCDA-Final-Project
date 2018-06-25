@@ -1,6 +1,8 @@
 <div class ="spotlight-container">
 <h1>Look Who Decided To Show Up</h1>
 
+<% if @search_results %>
+
 <%= form_tag create_path do %>
 	<%= hidden_field_tag "number_of_submits", @many_returned %>
 	  <% @form_submissions.each_with_index do |character, i| %>
@@ -26,4 +28,11 @@
 	<div class ="submit1"><%= submit_tag "Add to Favorites"%></div>
 
 <% end %>
+
+<% else %>
+
+<h2>No results!</h2>
+
+<% end %>
+
 <div>
