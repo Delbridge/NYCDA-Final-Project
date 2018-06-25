@@ -81,11 +81,7 @@ a .name-params {
 }
 
 .submit1{
-<<<<<<< HEAD
-  color:$red;
-  width: 20px;
-  height: 20px;
-=======
+
   // color:silver;
   position: absolute;
   top: 145px;
@@ -93,7 +89,7 @@ a .name-params {
   width: 175px;
   height: 30px;
   display: block;
->>>>>>> 4ecc24b01fca7487703e40f869271084bf783c0f
+
 }
 // h1 {
 //    border: solid .5em transparent;
@@ -116,7 +112,6 @@ a .name-params {
 //   left: 0;
 //   /** we want the pseudo-element to be behind our real column **/
 //   z-index: -1;
-<<<<<<< HEAD
 // }
 body{
 
@@ -146,6 +141,3 @@ body:before{
 				from(rgba(255,255,255,0.09)), to(rgba(255,255,255,0)));
 	-webkit-transform: scale(1.0,0.3);
 }
-=======
-// }
->>>>>>> 4ecc24b01fca7487703e40f869271084bf783c0f

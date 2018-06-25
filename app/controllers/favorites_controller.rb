@@ -82,6 +82,7 @@ class FavoritesController < ApplicationController
 
   def show
 
+
     @favorite = Favorite.find(params[:id])
 
 
@@ -97,6 +98,18 @@ class FavoritesController < ApplicationController
 
 
   end
+
+   @favorite = Favorite.find(params[:id])
+   @titles = []
+   @favorite.title.each do |item|
+     if @titles.include?(item)
+     else
+       @titles.push(item)
+     end
+   end
+
+
+ end
 
 
 
