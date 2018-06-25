@@ -1,36 +1,36 @@
 	
-<!-- <div class = "characterdetails">
+<div class = "characterdetails">
 	<h1>Character Details</h1>
-</div><br /> -->
+</div><br />
 
-<!-- <hr> -->
-
-<h1><%= @favorite.name%>
-</h1>
+<hr>
 
 
-<!-- <div class = "charname"><%= @favorite.name%> |
-		<%= link_to "Remove from Favorites", favorites_destroy_path(:project => @favorite.id), method: :delete %>
-</div><br /> -->
+<div class = "charname">SuperHero: <%= @favorite.name%> |
+		<%= link_to "Delete Hero", favorites_destroy_path(:project => @favorite.id), method: :delete %>
+</div><br />
 
-<div class="textboxes showflex">
+<div class = "charimage"><%= image_tag @favorite["image"], style: 'width: 578px; height: 444px' %></div><br>
 
-<%= image_tag @favorite["image"] %>
+<!-- <div class="vl"></div> -->
 
-<div class = "charbox1">
+<div class = "charbox1"><h3><strong>Description</strong></h3>
 	<h4><%= @favorite.description%></h4>
+</div><br>
 
-<% if @titles.length > 0 %>
-	<div class = "charbox2">
-		<h3><strong>Appears in</strong></h3>
-		<% @titles.each do |c| %>
-		<%= c %><br>
+<div class = "charbox2">
+	<h3><strong>Recommended Comic Titles</strong></h3><br />
+	<% @favorite.title.each_with_index do |c, index| %>
 		
-		<% end %>
+	<h4><%= index + 1 %>. <%= c %></h4>
 
-	</div>
+	<br />
+	<hr>
+	
 	<% end %>
 
-	<div class="upd"><%= link_to "Remove from Favorites", favorites_destroy_path(:project => @favorite.id), method: :delete %></div>
-
 </div>
+	 
+	
+
+
