@@ -18,19 +18,56 @@
 	<h4><%= @favorite.description%></h4>
 </div><br>
 
-<div class = "charbox2">
-	<h3><strong>Recommended Comic Titles</strong></h3><br />
-	<% @titles.each_with_index do |c, index| %>
-		
-	<h4><%= index + 1 %>. <%= c %></h4>
+	<% if @titles.length > 0 %>
+		<div class = "charbox2">
+			<h3><strong>Appears In:</strong></h3>
+			<div class ="column">
+			<% @titles.each_with_index do |c, index| %>
+			<h4><%= index + 1 %>. <%= c %></h4>
 
-	<br />
-	<hr>
-	
+			
+			<% end %>
+			</div>
+
+		</div>
 	<% end %>
 
+
+
+	<div class="upd"><%= link_to "Remove from Favorites", favorites_destroy_path(:project => @favorite.id), method: :delete %></div>
+
 </div>
-	 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
