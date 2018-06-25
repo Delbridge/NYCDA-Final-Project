@@ -1,24 +1,18 @@
 @import "variables";
 
 body {
-	display: grid;
-	grid-template-areas: 'head head head'
-		'nav nav nav'
-		'. body .';
-	grid-template-columns: 1fr 20fr 1fr;
 	background-color:$black;
 	font-family: $body-font;
+	overflow: scroll !important;
 }
 
 header {
-	grid-area: head;
 	background-color: $blue;
 	height:80px;
 	background: linear-gradient(to right, $blue , $dkblue);
 }
 
 nav {
-	grid-area: nav;
 	background-color: $red;
 	background: linear-gradient(to right, $red , $yellow);
 	height:40px;
@@ -26,7 +20,9 @@ nav {
 }
 
 #bodycontainer {
-	grid-area:body;
+	width:90%;
+	margin:0 auto;
 	display: flex;
 	flex-wrap: wrap;
+	overflow: scroll !important;
 }
