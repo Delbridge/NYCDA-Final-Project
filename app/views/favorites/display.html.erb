@@ -11,8 +11,8 @@
 
 					<div class = "field">
 
-						  <div class="i"><%= image_tag @search_results[i]["image"] %>
-						  <div class = "name-params">	<%= @search_results[i]["name"] %>	</div></div>
+						  <div class="i"><%= image_tag @search_results[i]["image"] %></div>
+						  <div class = "name-params">	<%= @search_results[i]["name"] %>	</div>
 							<%= hidden_field_tag "name"+i.to_s, @search_results[i]["name"] %>
 							<%= hidden_field_tag "title"+i.to_s, @search_results[i]["title"] %>
 							<%= hidden_field_tag "image"+i.to_s, @search_results[i]["image"] %>

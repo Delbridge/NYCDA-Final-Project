@@ -24,9 +24,6 @@ class FavoritesController < ApplicationController
     @search_results = params[:search_results]
 
 
-    @many_returned.times do
-      @form_submissions.push(Favorite.new)
-
     if @search_results
       @many_returned = @search_results.length
       @form_submissions = []
@@ -34,7 +31,6 @@ class FavoritesController < ApplicationController
       @many_returned.times do
         @form_submissions.push(Favorite.new)
       end
-
     end
 
   end
@@ -59,25 +55,6 @@ class FavoritesController < ApplicationController
     redirect_to "/favorites/index"
   end
 
-  # def create
-  #     if params[:wanted] == "true"
-  #      @favorite = Favorite.new
-  #      @favorite.title = params[:title].split(",")
-  #      @favorite.name = params[:name]
-  #      @favorite.image = params[:image]
-  #      @favorite.description = params[:description]
-  #      @favorite.user_id = current_user.id
-  #         if @favorite.save
-  #           flash[:success] = "Here are your results!"
-  #           redirect_to "/favorite/#{@favorite.id}"
-  #         else
-  #           redirect_to "/"
-  #         end
-  #     else
-  #         redirect_to "/favorites/index"
-  #     end
-  # end
-
 
 
   def show
@@ -94,24 +71,7 @@ class FavoritesController < ApplicationController
         @titles.push(item)
       end
     end
-
-
-
-  end
-
-   @favorite = Favorite.find(params[:id])
-   @titles = []
-   @favorite.title.each do |item|
-     if @titles.include?(item)
-     else
-       @titles.push(item)
-     end
-   end
-
-
- end
-
-
+end
 
   def destroy
     @favorite = Favorite.find(params[:project])

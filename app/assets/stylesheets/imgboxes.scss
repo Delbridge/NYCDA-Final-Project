@@ -17,7 +17,7 @@
 
 .i img {
   border-radius: 50%;
-  border: 10px solid white;
+  border: 10px solid #57a7cc;
   width:175px;
   height:175px;
 }
@@ -33,15 +33,18 @@
   // background-color: GREEN;
   // margin: -40px;
   // text-decoration-line: underline;
+  border-radius: 25px;
   font-style:$body-font;
-  font-size: 17px;
+  font-size: 15px;
   height: 60px;
-  position: absolute;
+  // position: absolute;
   top: 25%;
   text-align:center;
+  color: black;
+  text-shadow: 2px 2px 4px #7996c6;
   width:175px;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding:2px 20px;
+  background:linear-gradient(to bottom right, #bf4040, #f7f271);
+  padding:8px;
   font-family: $title-font;
   text-transform: uppercase;
 }
@@ -49,18 +52,22 @@
 a .name-params {
   color: #0f4760;
   letter-spacing: 1px;
+  margin-top: 10px;
+
 }
 
 #sub-b{
-  color:$red;
+  color:$blue;
   font-style:$body-font;
   font-size: 15px;
   margin-top: 20px;
   // background-color: red;
+
+// box-shadow: 0 4px 2px 5px gray;
 }
 
 #sub-b:hover{
-  color: $blue;
+  color: $red;
   background-color: $blue;
 }
 
@@ -82,10 +89,11 @@ a .name-params {
 
 .submit1{
 
-  // color:silver;
-  position: absolute;
+  color:#e08618;
+  // #db841a
+  // position: absolute;
   top: 145px;
-  left: 350px;
+  right: 350px;
   width: 175px;
   height: 30px;
   display: block;
@@ -113,31 +121,3 @@ a .name-params {
 //   /** we want the pseudo-element to be behind our real column **/
 //   z-index: -1;
 // }
-body{
-
-	position: relative;
-
-	color: white;
-
-	width: 100%;
-	height: 100%;
-
-	background-image: -webkit-gradient(radial, 50% 75%, 0, 50% 75%, 400,
-				from(rgba(55,89,138,0.5)), to(rgba(55,89,138,0))),
-			-webkit-gradient(linear,left top,left bottom,
-				color-stop(0, #3e9ac4),color-stop(0.6, #000000));
-	overflow: hidden;
-}
-
-body:before{
-	position: absolute;
-	top: 10%;
-	width: 100%;
-	height: 150%;
-	content: "";
-
-	/* Webkit eliptical gradient*/
-	background-image: -webkit-gradient(radial, 50% 35%, 100, 50% 35%, 350,
-				from(rgba(255,255,255,0.09)), to(rgba(255,255,255,0)));
-	-webkit-transform: scale(1.0,0.3);
-}
