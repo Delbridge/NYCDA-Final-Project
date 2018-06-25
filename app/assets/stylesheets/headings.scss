@@ -1,0 +1,11 @@
+@import "variables";
+
+h3 {
+	font-family: $link-font;
+	text-transform: uppercase;
+}
+
+h1, h2 {
+	display: block;
+	width: 100%;
+}

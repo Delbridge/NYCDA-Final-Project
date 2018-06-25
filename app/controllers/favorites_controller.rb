@@ -22,11 +22,14 @@ class FavoritesController < ApplicationController
     end
 
     @search_results = params[:search_results]
-    @many_returned = @search_results.length
-    @form_submissions = []
 
-    @many_returned.times do 
-      @form_submissions.push(Favorite.new)
+    if @search_results
+      @many_returned = @search_results.length
+      @form_submissions = []
+
+      @many_returned.times do 
+        @form_submissions.push(Favorite.new)
+      end
     end
 
   end
@@ -75,6 +78,13 @@ class FavoritesController < ApplicationController
   def show
 
     @favorite = Favorite.find(params[:id])
+    @titles = []
+    @favorite.title.each do |item|
+      if @titles.include?(item)
+      else
+        @titles.push(item)
+      end
+    end
     
 
   end
