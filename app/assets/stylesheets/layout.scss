@@ -28,6 +28,7 @@ header {
 	background-color: $blue;
 	height:80px;
 	background: linear-gradient(to right, $blue , $dkblue);
+	z-index: 20;
 }
 
 nav {
@@ -38,6 +39,7 @@ nav {
 	background: linear-gradient(to right, $red , $yellow);
 	height:40px;
 	margin-bottom:15px;
+	z-index: 20;
 }
 
 #bodycontainer {
@@ -45,4 +47,5 @@ nav {
 	margin:120px auto 0;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }

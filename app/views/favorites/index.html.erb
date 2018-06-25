@@ -1,20 +1,11 @@
 <h1>My Favorite Super Hero Characters </h1>
 
-<div class = "field">
-  
       <% @favorites.each_with_index do |favorite, index| %>
 
-        <div class= "images-flex">
-          
-            <div class= "name-params"><%= index + 1 %>. <a href = "/favorite/<%= favorite.id %>"><%= favorite["name"] %></a></div>
-            <div class="i">  <%= image_tag favorite["image"], style: 'width: 150px; height: 150px' %></div>
-                <hr>
-            <div id="sub-b"><%= link_to "Delete Hero", favorites_destroy_path(:project => favorite.id), method: :delete %></div>
-                <hr>
-
-        </div>
+<a href = "/favorite/<%= favorite.id %>">
+          <div class="i"> 
+            <div class= "name-params"><%= favorite["name"] %></div>
+             <%= image_tag favorite["image"] %>
+            <div id="sub-b"><%= link_to "Delete Hero", favorites_destroy_path(:project => favorite.id), method: :delete %></div></div></a>
 
       <% end %>
-</div>
-
-<hr>
