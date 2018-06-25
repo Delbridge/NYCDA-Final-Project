@@ -2,7 +2,7 @@
 
       <% @favorites.each_with_index do |favorite, index| %>
 
-<a href = "/favorite/<%= favorite.id %>">
+			<a href = "/favorite/<%= favorite.id %>">
           <div class="i"> 
             <div class= "name-params"><%= favorite["name"] %></div>
              <%= image_tag favorite["image"] %>
