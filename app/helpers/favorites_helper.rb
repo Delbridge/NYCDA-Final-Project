@@ -19,6 +19,7 @@ def check_shortbox(archive_array)
 	require 'uri'
 	require 'rubygems'
 	require 'json'
+	require 'date'
 	uri1 = URI.parse("https://api.shortboxed.com/comics/v1/releases/available")
 	dates = JSON.parse(Net::HTTP.get_response(uri1).body)["dates"]
 	search_dates = []

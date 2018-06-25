@@ -18,11 +18,17 @@
 
 }
 
+.showflex {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
 
 .characterdetails h1 {
 
 	// border: 2px solid green;
 	font-size: 50px;
+	position: relative;
 
 }
 
@@ -30,7 +36,6 @@
 .charname {
 
 	color: white;
-	border: 2px solid red;
 	height: 40px; 
 	font-size: 20px;
 	width: 100%;
@@ -38,47 +43,32 @@
 	margin-left: 70px;
 	font-size: 28px;
 	background-color: $red;
-	background: linear-gradient(to right, $red , $yellow);
 	position: relative;
-	bottom: 80px;
 }
 
 
-.charimage {
-
-	border: 2px solid red;
+.showflex img {
 	width: 38%;
-	margin-top: 20px;
-	position: relative;
-	bottom: 95px;
-	margin-left: 70px;
-
+	min-width:260px;
+	min-height:300px;
+	max-height:340px;
+	border-radius: 50%;
+	// border: 20px solid $black;
 }
 
-
+.upd {
+	text-align:right;
+}
 
 .charbox1 {
-
-	color: white;
-	border: 2px solid red;
-	width: 100%;
-	background-color: $red;
-	background: linear-gradient(to right, $red , $yellow);
-	margin-left: 652px;
-	// margin-right: 40px;
-	position: relative;
-	// right: 10px;
-	bottom: 543px;
+	width: 55%;
+	margin-left: 20px;
 	font-size: 24px;
-	height: 450px;
-
 }
 
 .charbox1 h3 {
 
 	text-align: center;
-	text-shadow: 2px 2px #FF0000;
-	text-decoration: underline;
 	font-size: 30px;
 
 }
@@ -86,7 +76,6 @@
 .charbox1 h4 {
 
 	color: black;
-	text-shadow: 1px 1px #FF0000;
 	font-size: 28px;
 
 
@@ -95,19 +84,8 @@
 
 
 .charbox2 {
-
-	color: white;
-	border: 2px solid red;
-	width: 100%;
-	background-color:#3085ad;
-	margin-left: 70px;
-	position: relative;
-	bottom: 600px;
 	font-size: 24px;
-	// padding-left: 10px;
 	text-align: center;
-	background-color: $red;
-	background: linear-gradient(to right, $red , $yellow);
 	
 }
 
@@ -115,24 +93,15 @@
 .charbox2 h3 {
 
 	text-align: center;
-	text-shadow: 2px 2px #FF0000;
-	text-decoration: underline;
 	font-size: 30px;
-	// border: 2px solid black;
-	height: 50px;
-	position: relative;
-	bottom: 20px;
-	padding-top: 5px;
-	background-color: $blue;
-	background: linear-gradient(to right, $blue , $dkblue);
-
+	padding: 0;
+	margin:0;
 
 }
 
 .charbox2 h4 {
 
 	color: black;
-	text-shadow: 1px 1px #FF0000;
 	font-size: 28px;
 
 }

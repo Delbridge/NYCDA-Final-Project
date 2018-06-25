@@ -1,29 +1,33 @@
 
-<h3>Look Who Decided To Show Up</h3>
+<h1>Search Results</h1>
 
+
+<% if @search_results %>
+<div class="searchfield">
 <%= form_tag create_path do %>
 		<div class="images-flex">
 	<%= hidden_field_tag "number_of_submits", @many_returned %>
 	  <% @form_submissions.each_with_index do |character, i| %>
 
-
 					<div class = "field">
 
-							<div class = "name-params">	<%= i + 1 %>. <%= @search_results[i]["name"] %>	</div>
-						  <div class="i">	<div style="width:150px; height: 150px;"><%= image_tag @search_results[i]["image"], style: 'width: 100%; height: auto' %></div></div>
+						  <div class="i"><%= image_tag @search_results[i]["image"] %>
+						  <div class = "name-params">	<%= @search_results[i]["name"] %>	</div></div>
 							<%= hidden_field_tag "name"+i.to_s, @search_results[i]["name"] %>
 							<%= hidden_field_tag "title"+i.to_s, @search_results[i]["title"] %>
 							<%= hidden_field_tag "image"+i.to_s, @search_results[i]["image"] %>
 							<%= hidden_field_tag "description"+i.to_s, @search_results[i]["description"] %>
-											<hr>
 
 							<div id="sub-b">	<%= select_tag("wanted"+i.to_s, options_for_select([["Add to your favorites?", false],["Yes!", true],["No", false]]))%></div>
-
-											<hr>
 					</div>
 		<% end %>
-					</div>
 
-	<div class ="submit1"><%= submit_tag "Add to Favorites"%></div>
+	<div class ="submit1"><%= submit_tag "Update Favorites"%></div>
+
+<% end %>
+</div>
+<% else %>
+
+<h2>No results!</h2>
 
 <% end %>
