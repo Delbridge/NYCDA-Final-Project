@@ -2,12 +2,13 @@
 
 .calentry {
 	width:100% !important;
-	height: auto !important;
+	min-height: auto !important;
 	position: relative;
 	padding:0 !important;
 	border-top-right-radius: 0 !important;
 	border-bottom-left-radius: 0 !important;
 	margin-bottom:30px;
+  background:linear-gradient(to bottom right, white, #f9f59c) !important;
 }
 
 .calhead {

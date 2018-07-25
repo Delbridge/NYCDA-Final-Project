@@ -18,7 +18,7 @@
 							<%= hidden_field_tag "image"+i.to_s, @search_results[i]["image"] %>
 							<%= hidden_field_tag "description"+i.to_s, @search_results[i]["description"] %>
 
-							<div id="sub-b">	<%= select_tag("wanted"+i.to_s, options_for_select([["Add to your favorites?", false],["Yes!", true],["No", false]]))%></div>
+							<div id="sub-b"><%= select_tag("wanted"+i.to_s, options_for_select([["Add to your favorites?", false],["Yes!", true],["No", false]]))%></div>
 					</div>
 		<% end %>
 
