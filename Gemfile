@@ -32,12 +32,6 @@ gem 'devise'
   # gem 'wdm', '>= 0.1.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
-group :development, :test do
-
-  gem 'sqlite3'
-
-end
-
 group :production do
 
   gem 'pg'
@@ -62,6 +56,7 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'sqlite3'
 end
 
 group :test do
