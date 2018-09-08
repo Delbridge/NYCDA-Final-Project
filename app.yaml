@@ -1,0 +1,9 @@
+# entrypoint: bundle exec rackup --port $PORT
+# env: flex
+# runtime: ruby
+
+# env_variables:
+#   SECRET_KEY_BASE: 8a46624422433b413a31d3657847e7cc022d486229db54a89fdbeaf5325d76a297cfaeaf20583a573bc54817e52bc0d3356c5e83b2d3818a93866ae21a5d1683
+
+# beta_settings:
+#   cloud_sql_instances: marvellistbuild:northamerica-northeast1:marvelbuild-2018

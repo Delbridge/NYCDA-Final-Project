@@ -5,8 +5,8 @@
 
 	color: white; 
 	text-align: center;
-	text-shadow: 2px 2px #FF0000;
-	text-decoration: underline;
+	// text-shadow: 2px 2px #FF0000;
+	// text-decoration: underline;
 	margin-bottom: 10px;
 	border: 2px solid white;
 	background-color: $red;
@@ -17,9 +17,10 @@
 
 }
 
-.mslandingtitle h2 {
+.mslandingtitle h3 {
 
-	font-size: 60px;
+	font-size: 40px;
+	text-shadow: 2px 2px #FF0000;
 
 }
 
